@@ -30,22 +30,16 @@ Required jar file will be created inside `/target` folder.
 3. Run the application by clicking `Run` option or pressing `F9`
 SpringBoot application server will load and start on port `8080` of the `localhost`.
 
-## Rest  API Endpoints and Resources
-Rest API Endpoint is mapped to `http://127.0.0.1:8080/servers/`
-
-- PUT a server	`http://127.0.0.1:8080/servers/createServer`
-Accept "server" object in body in json format.
-
-- GET servers	`http://127.0.0.1:8080/servers/getServer`
+- GET servers	`localhost:8081/servers/getServer`
 Returns a list of "server" objects.
 
-- GET server	by ID	`http://127.0.0.1:8080/servers/getServer?id=<ID>`
+- GET server	by ID	`localhost:8081/servers/getServer?id=<ID>`
 Returns a  "server" object matching with ID.
 
-- GET servers	by Name	`http://127.0.0.1:8080/servers/getServer?name=<Nmae>`
+- GET servers	by Name	`localhost:8081/servers/getServer?name=<Nmae>`
 Returns a list of "server" objects matching with Name.
 
-- DELETE server	`http://127.0.0.1:8080/servers/deleteServer?id=<ID>`
+- DELETE server	`localhost:8081/servers/deleteServer?id=<ID>`
 Deletes a  "server" object matching with ID.
 
 ## RestController interface extends MongoRepository
@@ -68,7 +62,7 @@ List<Server> findByName(String name);
 
 `
 FROM openjdk:8-alpine
-EXPOSE 8080
+EXPOSE 8081
 ADD target/demo.jar demo.jar
 ENTRYPOINT ["java", "-Dspring.data.mongodb.uri=mongodb://mongod:27017/servers", "-jar", "/demo.jar"]
 `
@@ -92,19 +86,19 @@ Run the following created collection to Test and consume the APIs
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/5ff40fbad3968a1b28b0)
 
-**NOTE:** *The above collection is created and tested for `http://127.0.0.1:8080/servers/` endpoint*
+**NOTE:** *The above collection is created and tested for `http://127.0.0.1:8081/servers/` endpoint*
 
 ### Screenshots
 
-![PutPostManIO](/screenshots/putPostManIO.PNG)
+![PutPostManIO](/screenshots/save%20data.png)
 
-![GetAllServerPostManIO](/screenshots/getAllServerPostManIO.PNG)
+![GetAllServerPostManIO](/screenshots/get%20all%20data.png)
 
-![GetServByIdPostManIO](/screenshots/getServByIdPostManIO.PNG)
+![GetServByIdPostManIO](/screenshots/get%20data%20using%20ID.png)
 
-![GetServByNamePostManIO](/screenshots/getServByNamePostManIO.PNG)
+![UpdateOrPutData](/screenshots/update%20data.png)
 
-![DelPostManIO](/screenshots/delPostManIO.PNG)
+![DelPostManIO](/screenshots/delete%20data.png)
 
 ### Using WebUIForms
 
