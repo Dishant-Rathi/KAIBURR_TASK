@@ -7,7 +7,7 @@ Kaiburr Tasks
 - [x] [Task 1. Java REST API](/task1)
 - [x] [Task 2. Swagger codegen](/spring-server-generated)
 - [x] [Task 3. Docker compose](/task3)
-- [x] [Task 4. UI]
+- [x] [Task 4. UI](/public)
 - [x] [Task 6. Text classification](/Task_6.ipynb)
 
 ## High-level Directory Overview
